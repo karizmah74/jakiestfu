@@ -7,6 +7,16 @@ module.exports = function (grunt) {
 
     pkg: pkg,
 
+    autoprefixer: {
+      core: {
+        options: {
+          browsers: ['last 3 versions', 'ie 8', 'ie 9']
+        },
+        src: 'dist/css/stfu.css',
+        dest: 'dist/css/stfu.css'
+      }
+    },
+
     clean: {
       pre: {
         src: ["dist"]
@@ -93,6 +103,7 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -102,6 +113,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Register Tasks
-  grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify', 'copy', 'less']);
-  grunt.registerTask('develop', ['clean', 'jshint', 'concat', 'uglify', 'copy', 'less', 'watch']);
+  grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify', 'copy', 'less', 'autoprefixer']);
+  grunt.registerTask('develop', ['clean', 'jshint', 'concat', 'uglify', 'copy', 'less', 'autoprefixer', 'watch']);
 };
