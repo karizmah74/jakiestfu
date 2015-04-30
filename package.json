@@ -4,7 +4,8 @@
   "description": "The code is dangerous",
   "scripts": {
     "build": "./node_modules/grunt-cli/bin/grunt",
-    "build-watch": "./node_modules/grunt-cli/bin/grunt develop"
+    "build-watch": "./node_modules/grunt-cli/bin/grunt develop",
+    "serve": "cd dist && python -m SimpleHTTPServer 8000"
   },
   "repository": {
     "type": "git",

@@ -14,7 +14,13 @@ module.exports = function (grunt) {
     },
 
     concat: {
-      tools: {
+      lib: {
+        src: [
+          'bower_components/svg-injector/dist/svg-injector.min.js'
+        ],
+        dest: 'dist/js/lib.js'
+      },
+      core: {
         options: {
           footer: "stfu.version = '<%= pkg.version %>';"
         },
@@ -39,7 +45,7 @@ module.exports = function (grunt) {
     },
 
     less: {
-      prod: {
+      core: {
         options: {
           banner: banner + "\n",
           compress: true,
@@ -52,7 +58,15 @@ module.exports = function (grunt) {
     },
 
     uglify: {
-      prod: {
+      lib: {
+        options: {
+          preserveComments: 'none'
+        },
+        files: {
+          'dist/js/lib.js': 'dist/js/lib.js'
+        }
+      },
+      core: {
         options: {
           banner: banner + "\n",
           preserveComments: 'none'
