@@ -11,6 +11,34 @@
     </head>
     <body>
 
-        <header></header>
+        <div>
+            <header>
+              <img id="brand" src="i/jakiestfu.svg">
+            </header>
+
+            <p><i>Senior Software Engineer at <a href="http://makerstudios.com/" class="dsc" target="_blank">Dollar Shave Club</a></i></p>
+            <nav>
+                <ul>
+                    <li><a href="https://github.com/jakiestfu/" class="gh" target="_blank">GitHub</a></li>
+                    <li><a href="https://twitter.com/jakiestfu" class="tw" target="_blank">Twitter</a></li>
+                    <li><a href="https://instagram.com/jakiestfu" class="in" target="_blank">Instagram</a></li>
+                    <li><a href="https://medium.com/@jakiestfu" class="md" target="_blank">Medium</a></li>
+                    <li><a href="https://news.ycombinator.com/user?id=jakiestfu" class="hn" target="_blank">HN</a></li>
+                    <li><a href="?email" class="em" target="_blank">Email</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <script type="text/javascript" src="../bower_components/svg-injector/dist/svg-injector.min.js"></script>
+        <script type="text/javascript">
+          window.onload = function() {
+            var mySVGsToInject = document.getElementById('brand');
+
+            // Do the injection
+            SVGInjector(mySVGsToInject);
+
+            document.body.className="view";
+          };
+        </script>
     </body>
 </html>
