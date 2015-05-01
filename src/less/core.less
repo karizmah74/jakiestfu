@@ -1,9 +1,9 @@
-@background: #333332;
-@color: #fff;
+@import "variables";
+@import "fonts";
 
 ::selection {
     background: @color;
-    color: @background;
+    color: @bg-color-1;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
 * {
@@ -22,13 +22,15 @@ body {
     font-family: "FF Tisa Web Pro";
     font-size: 22px;
     color: @color;
-    background: @background
+    background: -webkit-linear-gradient(left top, @bg-color-1, @bg-color-2); // For Safari 5.1 to 6.0
+    background: -o-linear-gradient(bottom right, @bg-color-1, @bg-color-2); // For Opera 11.1 to 12.0
+    background: -moz-linear-gradient(bottom right, @bg-color-1, @bg-color-2); // For Firefox 3.6 to 15
+    background: linear-gradient(to bottom right, @bg-color-1, @bg-color-2); // Standard syntax
 }
 header {
-    text-transform: uppercase;
-    font: 800 64px /64px "Freight Sans Pro";
     display: inline-block;
     position: relative;
+    margin-bottom: 30px;
 }
 body {
     text-align: center;
@@ -37,7 +39,7 @@ header {
     display: block;
     text-align: center;
     height: 200px;
-    margin: 0 auto;
+    margin: 0 auto 50px 0;
 }
 header svg {
     height: 100%;
@@ -67,6 +69,9 @@ a {
     text-decoration: none;
     border-bottom: 2px solid transparent;
     display: inline-block;
+    &:hover {
+      border-color: @color;
+    }
 }
 div {
     width: 500px;
@@ -76,42 +81,6 @@ div {
     top: 50%;
     margin-left: -255px;
     margin-top: -150px
-}
-.ms:hover {
-    color: #999;
-    border-color: #999
-}
-.gh:hover {
-    color: #97aecc;
-    border-color: #97aecc
-}
-.em:hover {
-    color: #333;
-    border-color: #333
-}
-.tw:hover {
-    color: #00aced;
-    border-color: #00aced
-}
-.fo:hover {
-    color: #778e72;
-    border-color: #778e72
-}
-.dr:hover {
-    color: #ea4c89;
-    border-color: #ea4c89
-}
-.md:hover {
-    color: #57ad68;
-    border-color: #57ad68
-}
-.in:hover {
-    color: #517FA4;
-    border-color: #517FA4
-}
-.hn:hover {
-    color: #ff6600;
-    border-color: #ff6600
 }
 /*
  * Responsive
