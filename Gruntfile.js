@@ -41,15 +41,6 @@ module.exports = function (grunt) {
       }
     },
 
-    copy: {
-      html: {
-        files: [
-          {src: ['src/index.html'], dest: 'dist/index.html'},
-          {expand: true,  cwd: 'src/svg/', src: ['**/*'], dest: 'dist/svg/'}
-        ]
-      }
-    },
-
     htmlmin: {
       dist: {
         options: {
@@ -75,6 +66,23 @@ module.exports = function (grunt) {
         },
         files: {
           'dist/css/stfu.css': 'src/less/core.less'
+        }
+      }
+    },
+
+    svgmin: {
+      options: {
+        plugins: [
+          {
+            removeViewBox: false
+          }, {
+            removeUselessStrokeAndFill: false
+          }
+        ]
+      },
+      dist: {
+        files: {
+          'dist/svg/stfu.svg': 'src/svg/stfu.svg'
         }
       }
     },
@@ -122,10 +130,11 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-svgmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Register Tasks
-  grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify', 'copy', 'htmlmin', 'less', 'autoprefixer']);
-  grunt.registerTask('develop', ['clean', 'jshint', 'concat', 'uglify', 'copy', 'htmlmin', 'less', 'autoprefixer', 'watch']);
+  grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify', 'htmlmin', 'svgmin', 'less', 'autoprefixer']);
+  grunt.registerTask('develop', ['clean', 'jshint', 'concat', 'uglify', 'htmlmin', 'svgmin', 'less', 'autoprefixer', 'watch']);
 };
