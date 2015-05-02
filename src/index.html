@@ -16,42 +16,22 @@
             </header>
 
             <p class="transition">
-              <i>Senior Software Engineer at <a href="http://makerstudios.com/" class="dsc" target="_blank">Dollar Shave Club</a></i>
+              <i>Senior Software Engineer at <a href="http://www.dollarshaveclub.com/" target="_blank">Dollar Shave Club</a></i>
             </p>
 
             <nav>
                 <ul>
-                    <li class="transition"><a href="https://github.com/jakiestfu/" class="gh" target="_blank">GitHub</a></li>
-                    <li class="transition"><a href="https://twitter.com/jakiestfu" class="tw" target="_blank">Twitter</a></li>
-                    <li class="transition"><a href="https://instagram.com/jakiestfu" class="in" target="_blank">Instagram</a></li>
-                    <li class="transition"><a href="https://medium.com/@jakiestfu" class="md" target="_blank">Medium</a></li>
-                    <li class="transition"><a href="https://news.ycombinator.com/user?id=jakiestfu" class="hn" target="_blank">HN</a></li>
-                    <li class="transition"><a href="?email" class="em" target="_blank">Email</a></li>
+                    <li class="transition"><a href="https://github.com/jakiestfu/" target="_blank">GitHub</a></li>
+                    <li class="transition"><a href="https://twitter.com/jakiestfu" target="_blank">Twitter</a></li>
+                    <li class="transition"><a href="https://instagram.com/jakiestfu" target="_blank">Instagram</a></li>
+                    <li class="transition"><a href="https://medium.com/@jakiestfu" target="_blank">Medium</a></li>
+                    <li class="transition"><a href="https://news.ycombinator.com/user?id=jakiestfu" target="_blank">HN</a></li>
+                    <li class="transition"><a href="mailto:jakie8@gmail.com" target="_blank">Email</a></li>
                 </ul>
             </nav>
         </div>
 
         <script type="text/javascript" src="js/lib.js"></script>
         <script type="text/javascript" src="js/stfu.js"></script>
-        <script type="text/javascript">
-          window.onload = function() {
-
-            // Branding
-            SVGInjector(document.getElementById('brand'));
-
-            // Themes
-            //var themes = ["slate", "peach", "teal", "shore"];
-            //document.body.className += " " + themes[Math.floor(Math.random()*themes.length)];
-
-            // Classes
-            var transitions = document.querySelectorAll('.transition');
-            for(var i = 0; i<transitions.length; i++) {
-              transitions[i].className += " t" + (i+1);
-            }
-
-            // Show
-            document.body.className += " view";
-          };
-        </script>
     </body>
 </html>
