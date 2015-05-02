@@ -50,6 +50,18 @@ module.exports = function (grunt) {
       }
     },
 
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: {
+          'dist/index.html': 'src/index.html',
+        }
+      }
+    },
+
     jshint: {
       all: ['Gruntfile.js', 'src/js/**/*.js']
     },
@@ -107,12 +119,13 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Register Tasks
-  grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify', 'copy', 'less', 'autoprefixer']);
-  grunt.registerTask('develop', ['clean', 'jshint', 'concat', 'uglify', 'copy', 'less', 'autoprefixer', 'watch']);
+  grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify', 'copy', 'htmlmin', 'less', 'autoprefixer']);
+  grunt.registerTask('develop', ['clean', 'jshint', 'concat', 'uglify', 'copy', 'htmlmin', 'less', 'autoprefixer', 'watch']);
 };
