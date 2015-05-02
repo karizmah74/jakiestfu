@@ -58,7 +58,7 @@ module.exports = function (grunt) {
       core: {
         options: {
           banner: banner + "\n",
-          compress: true,
+          compress: false,
           sourcemap: 'none'
         },
         files: {

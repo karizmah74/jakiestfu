@@ -1,0 +1,40 @@
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: @font-name;
+  font-size: @font-size;
+  text-align: center;
+
+  .theme("slate");
+  &.peach { .theme("peach"); }
+  &.teal { .theme("teal"); }
+  &.shore { .theme("shore"); }
+  &.shore { .theme("portrait"); }
+
+  .container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    p {
+      margin: @space 0 @space/2 0;
+    }
+    ul a {
+      font-size: 0.8em;
+    }
+  }
+
+  header {
+    display: inline-block;
+    width: 350px;
+    svg {
+      width: 100%;
+    }
+  }
+}

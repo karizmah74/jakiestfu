@@ -1,0 +1,25 @@
+.theme(@name) {
+  @st: "@{name}-start";
+  @en: "@{name}-end";
+  @cl: "@{name}-color";
+  .gradient(@@st, @@en);
+  color: @@cl;
+  svg path {
+    fill: @@cl;
+  }
+}
+
+.gradient (@start: #eee, @end: white) {
+  background: @start;
+  background: -webkit-linear-gradient(left top, @start, @end) top center no-repeat fixed; // For Safari 5.1 to 6.0
+  background: -o-linear-gradient(bottom right, @start, @end) top center no-repeat fixed; // For Opera 11.1 to 12.0
+  background: -moz-linear-gradient(bottom right, @start, @end) top center no-repeat fixed; // For Firefox 3.6 to 15
+  background: linear-gradient(to bottom right, @start, @end) top center no-repeat fixed; // Standard syntax
+}
+
+
+.transition-delay-step (@i, @step) when (@i > 0) {
+  @delay: @i*@step;
+  &.t@{i} { transition-delay: ~"@{delay}s"; }
+  .transition-delay-step(@i - 1, @step);
+}
