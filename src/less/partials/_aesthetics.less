@@ -1,7 +1,3 @@
-::selection {
-  background: transparent;
-  color: transparent;
-}
 * {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -9,6 +5,17 @@
 }
 html,
 body {
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  cursor: default;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+
   a {
     transition: all 0.3s ease;
   }
