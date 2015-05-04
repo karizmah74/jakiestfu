@@ -1,5 +1,3 @@
-var stfu = function() {};
-
 window.onload = function() {
 
   // Branding

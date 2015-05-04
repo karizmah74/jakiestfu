@@ -31,9 +31,6 @@ module.exports = function (grunt) {
         dest: 'dist/js/lib.js'
       },
       core: {
-        options: {
-          footer: "stfu.version = '<%= pkg.version %>';"
-        },
         src: [
           'src/js/**/*.js'
         ],
