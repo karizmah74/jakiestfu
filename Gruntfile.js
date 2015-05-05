@@ -109,6 +109,10 @@ module.exports = function (grunt) {
         files: 'src/js/**/*.js',
         tasks: ['jshint', 'concat', 'uglify']
       },
+      svg: {
+        files: 'src/svg/**/*.svg',
+        tasks: ['svgmin']
+      },
       less: {
         files: 'src/less/**/*.less',
         tasks: ['less']
