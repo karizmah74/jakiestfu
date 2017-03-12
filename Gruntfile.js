@@ -79,7 +79,8 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          'dist/svg/stfu.svg': 'src/svg/stfu.svg'
+          'dist/svg/stfu.svg': 'src/svg/stfu.svg',
+          'dist/svg/stfu-black.svg': 'src/svg/stfu-black.svg'
         }
       }
     },
