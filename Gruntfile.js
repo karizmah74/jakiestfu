@@ -38,6 +38,18 @@ module.exports = function (grunt) {
       }
     },
 
+    image: {
+      static: {
+        options: {
+          pngquant: true,
+          optipng: true,
+        },
+        files: {
+          'dist/img/stfu.png': 'src/img/stfu.png',
+        }
+      },
+    },
+
     htmlmin: {
       dist: {
         options: {
@@ -135,8 +147,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-svgmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-image');
 
   // Register Tasks
-  grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify', 'htmlmin', 'svgmin', 'less', 'autoprefixer']);
-  grunt.registerTask('develop', ['clean', 'jshint', 'concat', 'uglify', 'htmlmin', 'svgmin', 'less', 'autoprefixer', 'watch']);
+  grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify', 'htmlmin', 'svgmin', 'image', 'less', 'autoprefixer']);
+  grunt.registerTask('develop', ['clean', 'jshint', 'concat', 'uglify', 'htmlmin', 'svgmin', 'image', 'less', 'autoprefixer', 'watch']);
 };
